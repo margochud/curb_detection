@@ -1,0 +1,6 @@
+name: curb_detection
+dependencies:
+  - python=3.8
+  - numpy
+  - tqdm
+  - conda-forge::laspy
