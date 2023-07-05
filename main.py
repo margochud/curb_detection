@@ -31,7 +31,8 @@ def paths(sys_argv):
         home_path = os.path.expanduser('~')
         cur_time = datetime.now()
         time_format = "%Y-%m-%d %H:%M:%S"
-        path_out = home_path + r'/Desktop/borders_' + f"{cur_time:{time_format}}.las"
+        path_out = \
+            home_path + r'/Desktop/borders_' + f"{cur_time:{time_format}}.las"
     return path_in, path_out
 
 
@@ -86,7 +87,8 @@ if __name__ == '__main__':
     properties = data.dtype.names
     res_dir = filters.dir_change_filter(coord, thresh=thresh_dir, k=k)
     res_el = filters.elevation_filter(coord, thresh=thresh_el)
-    res_cont = filters.cont_filter(coord, version='CurbScan', thresh=thresh_cont)
+    res_cont = filters.cont_filter(coord, version='CurbScan',
+                                   thresh=thresh_cont)
     res_avg = res_dir & res_el & res_cont
     new_data = data[res_avg]
 
